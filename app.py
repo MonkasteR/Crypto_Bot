@@ -1,53 +1,8 @@
-import json
-
-import requests
 import telebot
+from config import keys, TOKEN
+from utils import ConvertionException, CriptoConverter
 
-TOKEN = "6290467291:AAG2ThBZgOx-WQ_FbwfuNLsfgWnwKgJFI-c"
 bot = telebot.TeleBot(TOKEN)
-
-# @bot.message_handler()
-# def echo_test(message: telebot.types.Message):
-#     bot.send_message(message.chat.id, 'hello')
-keys = {
-    'биткоин': 'BTC',
-    'эфириум': 'ETH',
-    'доллар': 'USD',
-    'рубль': 'RUB',
-    'евро': 'EUR',
-    'этериум': 'ETH',
-}
-
-
-class ConvertionException(Exception):
-    pass
-
-
-class CriptoConverter:
-    @staticmethod
-    def convert(quote: str, base: str, amount: str):
-        if quote == base:
-            raise ConvertionException(f'Валюты не должны быть одинаковыми {base}.')
-
-        try:
-            quote_ticker = keys[quote]
-        except KeyError:
-            raise ConvertionException(f'Валюта {quote} не найдена.')
-
-        try:
-            base_ticker = keys[base]
-        except KeyError:
-            raise ConvertionException(f'Валюта {base} не найдена.')
-
-        try:
-            amount = float(amount)
-        except ValueError:
-            raise ConvertionException(f'Неверное значение {amount}.')
-
-        r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}')
-        total_base = json.loads(r.content)[keys[base]]
-
-        return total_base
 
 
 @bot.message_handler(commands=['start', 'help'])
