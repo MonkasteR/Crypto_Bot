@@ -16,27 +16,27 @@ def start(message: telebot.types.Message):
     bot.send_message(message.chat.id, text)
 
 
-@bot.message_handler(commands=['help'])
+@bot.message_handler(commands=['help']) # TODO Сделать кнопкой
 def help(message: telebot.types.Message):
     text = 'Бот понимает команду в следующем формате: \n' \
-           '<имя валюты> <в какую перевести> <сколько перевевсти> \n' \
+           '<имя валюты> <в какую перевести> <сколько перевести> \n' \
            'Например: доллар рубль 10 \n' \
            'Чтобы увидеть список доступных валют введите: /values\n'
     bot.send_message(message.chat.id, text)
 
 
-@bot.message_handler(commands=['values'])
+@bot.message_handler(commands=['values']) # TODO Сделать кнопкой
 def values(message: telebot.types.Message):
     text = 'Доступные валюты: '
     for key in keys.keys():
         text = '\n'.join((text, key,))
-    bot.reply_to(message, text)
+    bot.send_message(message.chat.id, text)
 
 
 @bot.message_handler(content_types=['text'])
 def convert(message: telebot.types.Message):
     try:
-        values = message.text.split(sep=' ')
+        values = message.text.lower().split()
         if len(values) != 3:
             raise ConvertionException('Неверное количество параметров.')
         quote, base, amount = values

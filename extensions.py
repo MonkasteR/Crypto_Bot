@@ -16,17 +16,17 @@ class CriptoConverter:
             raise ConvertionException(f'Валюты не должны быть одинаковыми {base}.')
 
         try:
-            quote_ticker = keys[quote]
+            quote_ticker = keys[quote.lower()]
         except KeyError:
             raise ConvertionException(f'Валюта {quote} не найдена.')
 
         try:
-            base_ticker = keys[base]
+            base_ticker = keys[base.lower()]
         except KeyError:
             raise ConvertionException(f'Валюта {base} не найдена.')
 
         try:
-            amount = float(amount)
+            amount = float(amount.replace(',', '.'))
         except ValueError:
             raise ConvertionException(f'Неверное значение {amount}.')
 
