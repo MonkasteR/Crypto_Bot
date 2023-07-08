@@ -1,6 +1,7 @@
-import telebot
-import requests
 import json
+
+import requests
+import telebot
 
 TOKEN = "6290467291:AAG2ThBZgOx-WQ_FbwfuNLsfgWnwKgJFI-c"
 bot = telebot.TeleBot(TOKEN)
@@ -14,11 +15,39 @@ keys = {
     'доллар': 'USD',
     'рубль': 'RUB',
     'евро': 'EUR',
+    'этериум': 'ETH',
 }
 
 
 class ConvertionException(Exception):
     pass
+
+
+class CriptoConverter:
+    @staticmethod
+    def convert(quote: str, base: str, amount: str):
+        if quote == base:
+            raise ConvertionException(f'Валюты не должны быть одинаковыми {base}.')
+
+        try:
+            quote_ticker = keys[quote]
+        except KeyError:
+            raise ConvertionException(f'Валюта {quote} не найдена.')
+
+        try:
+            base_ticker = keys[base]
+        except KeyError:
+            raise ConvertionException(f'Валюта {base} не найдена.')
+
+        try:
+            amount = float(amount)
+        except ValueError:
+            raise ConvertionException(f'Неверное значение {amount}.')
+
+        r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}')
+        total_base = json.loads(r.content)[keys[base]]
+
+        return total_base
 
 
 @bot.message_handler(commands=['start', 'help'])
@@ -43,26 +72,8 @@ def convert(message: telebot.types.Message):
     if len(values) != 3:
         raise ConvertionException('Неверное количество параметров.')
     quote, base, amount = values
-    if quote == base:
-        raise ConvertionException(f'Валюты не должны быть одинаковыми {base}.')
+    total_base = CriptoConverter.convert(quote, base, amount)
 
-    try:
-        quote_ticker = keys[quote]
-    except KeyError:
-        raise ConvertionException(f'Валюта {quote} не найдена.')
-
-    try:
-        base_ticker = keys[base]
-    except KeyError:
-        raise ConvertionException(f'Валюта {base} не найдена.')
-
-    try:
-        amount = float(amount)
-    except ValueError:
-        raise ConvertionException(f'Неверное значение {amount}.')
-
-    r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}')
-    total_base = json.loads(r.content)[keys[base]]
     text = f'Цена {amount} {quote} в {base} = {total_base}'
     bot.send_message(message.chat.id, text)
 
