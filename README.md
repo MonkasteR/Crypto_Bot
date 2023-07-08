@@ -1,2 +1,2 @@
 # Crypto_Bot
-Learning bot Telegram currency converter
+This is an educational project. The bot takes information about current exchange rates from https://www.cryptocompare.com/ through the api and with a few simple manipulations it gives the values in a readable form.
