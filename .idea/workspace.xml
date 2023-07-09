@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b25d7fdd-b3de-41f0-8089-7ca98fafe623" name="Changes" comment="Основной работающий код">
-      <change afterPath="$PROJECT_DIR$/config_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b25d7fdd-b3de-41f0-8089-7ca98fafe623" name="Changes" comment="Подправлено, работает без наворотов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extensions.py" beforeDir="false" afterPath="$PROJECT_DIR$/extensions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +94,7 @@
       <updated>1688812115984</updated>
       <workItem from="1688812117813" duration="21864000" />
       <workItem from="1688850659823" duration="6078000" />
+      <workItem from="1688860094472" duration="4547000" />
     </task>
     <task id="LOCAL-00001" summary="Перед рефакторингом">
       <option name="closed" value="true" />
@@ -131,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688836062725</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Подправлено, работает без наворотов">
+      <option name="closed" value="true" />
+      <created>1688860178587</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1688860178587</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,9 +158,10 @@
     <MESSAGE value="Разнесли все по файлам" />
     <MESSAGE value="Промежуточный итог" />
     <MESSAGE value="Основной работающий код" />
-    <option name="LAST_COMMIT_MESSAGE" value="Основной работающий код" />
+    <MESSAGE value="Подправлено, работает без наворотов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Подправлено, работает без наворотов" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Crypto_Bot$app.coverage" NAME="app Coverage Results" MODIFIED="1688855611347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Crypto_Bot$app.coverage" NAME="app Coverage Results" MODIFIED="1688863340666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
