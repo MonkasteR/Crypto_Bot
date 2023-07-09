@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b25d7fdd-b3de-41f0-8089-7ca98fafe623" name="Changes" comment="Подправлено, работает без наворотов">
+    <list default="true" id="b25d7fdd-b3de-41f0-8089-7ca98fafe623" name="Changes" comment="Работает с кнопками. Но есть ошибка после одного цикла использования">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
@@ -22,6 +24,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -94,7 +97,8 @@
       <updated>1688812115984</updated>
       <workItem from="1688812117813" duration="21864000" />
       <workItem from="1688850659823" duration="6078000" />
-      <workItem from="1688860094472" duration="4547000" />
+      <workItem from="1688860094472" duration="4602000" />
+      <workItem from="1688865565801" duration="1509000" />
     </task>
     <task id="LOCAL-00001" summary="Перед рефакторингом">
       <option name="closed" value="true" />
@@ -136,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688860178587</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Работает с кнопками. Но есть ошибка после одного цикла использования">
+      <option name="closed" value="true" />
+      <created>1688864695361</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1688864695361</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,9 +171,10 @@
     <MESSAGE value="Промежуточный итог" />
     <MESSAGE value="Основной работающий код" />
     <MESSAGE value="Подправлено, работает без наворотов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Подправлено, работает без наворотов" />
+    <MESSAGE value="Работает с кнопками. Но есть ошибка после одного цикла использования" />
+    <option name="LAST_COMMIT_MESSAGE" value="Работает с кнопками. Но есть ошибка после одного цикла использования" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Crypto_Bot$app.coverage" NAME="app Coverage Results" MODIFIED="1688863340666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Crypto_Bot$app.coverage" NAME="app Coverage Results" MODIFIED="1688866997297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

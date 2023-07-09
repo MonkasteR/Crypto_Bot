@@ -67,13 +67,13 @@ def quote_handler(message: telebot.types.Message, base):
 
 
 def amount_handler(message: telebot.types.Message, base, quote):
-    amount = message.text.lower().strip()
+    amount = message.text.strip()
     try:
-        new_price = CriptoConverter.get_price(base, quote, amount)
+        total_base = CriptoConverter.get_price(base, quote, amount)
     except ConvertionException as e:
         bot.send_message(message.chat.id, f"Ошибка конвертации: \n{e} ")
     else:
-        text = f"Цена {amount} {base} в {quote} = {new_price}"
+        text = f"Цена {amount} {base} в {quote} = {total_base}"
         bot.send_message(message.chat.id, text)
 
 
@@ -83,14 +83,14 @@ def convert(message: telebot.types.Message):
     try:
         if len(values) != 3:
             raise ConvertionException('Неверное количество параметров.')
-        quote, base, amount = values
-        total_base = CriptoConverter.get_price(quote, base, amount)
+        base, quote, amount = values
+        total_base = CriptoConverter.get_price(base, quote, amount)
     except ConvertionException as e:
         bot.reply_to(message, f'Ошибка пользователя\n{e}')
     except Exception as e:
         bot.reply_to(message, f'Не удалось обработать команду\n{e}')
     else:
-        text = f'Цена {amount} {quote} в {base} = {total_base}'
+        text = f'Цена {amount} {base} в {quote} = {total_base}'
         bot.send_message(message.chat.id, text)
 
 
